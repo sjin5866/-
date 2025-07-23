@@ -1,1 +1,57 @@
+import random
+
+def hangman():
+    words = [
+        "python", "banana", "computer", "programming", "hangman",
+        "challenge", "keyboard", "internet", "university", "science"
+    ]
+    word = random.choice(words)
+    guessed = set()
+    wrong = 0
+    max_wrong = 6
+
+    print("🎉 행맨(Hangman) 게임에 오신 것을 환영합니다! 🎉")
+    print(f"총 {max_wrong}번의 오답 기회가 있습니다. 단어를 맞혀 보세요.\n")
+
+    while wrong < max_wrong:
+        # 현재 단어 상태 표시
+        display = " ".join([c if c in guessed else "_" for c in word])
+        print(f"단어: {display}")
+        print(f"남은 기회: {max_wrong - wrong}    시도한 문자: {', '.join(sorted(guessed)) or '없음'}")
+
+        guess = input("문자 하나를 입력하거나 전체 단어를 추측하세요: ").strip().lower()
+        if not guess:
+            print("입력이 없습니다. 다시 시도해주세요.\n")
+            continue
+
+        # 한 글자 입력 처리
+        if len(guess) == 1:
+            if guess in guessed:
+                print("이미 시도한 문자입니다.\n")
+                continue
+            guessed.add(guess)
+
+            if guess in word:
+                print("✅ 맞았습니다!\n")
+                # 단어 전체가 맞춰졌는지 확인
+                if all(c in guessed for c in word):
+                    print(f"🎊 축하합니다! 단어를 맞히셨습니다: {word} 🎊")
+                    break
+            else:
+                wrong += 1
+                print("❌ 틀렸습니다.\n")
+
+        # 단어 전체를 입력한 경우
+        else:
+            if guess == word:
+                print(f"🎊 축하합니다! 단어를 맞히셨습니다: {word} 🎊")
+                break
+            else:
+                wrong += 1
+                print("❌ 틀렸습니다.\n")
+    else:
+        print(f"💥 게임 오버! 정답은 “{word}”였습니다.")
+
+if __name__ == "__main__":
+    hangman()
 
