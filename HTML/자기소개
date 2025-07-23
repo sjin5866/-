@@ -10,7 +10,7 @@
     /* ─── 여기에 좋아하는 색상을 지정하세요! ─── */
     :root {
       /* 예시: --fav-color: #e74c3c; */
-      --fav-color: #86bce0;
+      --fav-color: #655a9d;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
