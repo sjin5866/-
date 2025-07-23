@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>자기소개</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+    /* ─── 여기에 좋아하는 색상을 지정하세요! ─── */
+    :root {
+      /* 예시: --fav-color: #e74c3c; */
+      --fav-color: #86bce0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .profile-pic {
+      width: 100%;
+      height: 250px;
+      background-color: var(--fav-color);
+    }
+
+    .content { padding: 24px; }
+    .content h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+    .content h2 {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 16px;
+      color: #808d7f;
+    }
+    .content p { line-height: 1.6; margin-bottom: 16px; }
+
+    .skills {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .skills li {
+      background: var(--fav-color);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      display: flex;
+      gap: 16px;
+    }
+    .contact a {
+      text-decoration: none;
+      color: var(--fav-color);
+      font-weight: 500;
+      transition: filter 0.2s;
+    }
+    .contact a:hover {
+      /* hover 시 색상 밝기를 90%로 줄입니다 */
+      filter: brightness(0.9);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="profile-pic"></div>
+
+    <div class="content">
+      <!-- 여기를 본인 소개로 수정하세요 -->
+      <h1>이서진 (Seojin Lee)</h1>
+      <h2>복자여자고등학교 1학년</h2>
+      <p>
+        안녕하세요.
+      </p>
+      <ul class="skills">
+        <li>Python</li>
+        <li>C/C++</li>
+        <li>Arduino</li>
+        <li>TensorFlow</li>
+        <li>HTML/CSS</li>
+      </ul>
+      <div class="contact">
+        <a href="mailto:chean06@gachon.ac.kr">메일 보내기</a>
+        <a href="https://github.com/chean61/20250723bokja?tab=readme-ov-file" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
 
